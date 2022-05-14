@@ -12,13 +12,13 @@ import java.util.List;
 
 @Slf4j
 @Component
-public class WebSocketHandler extends TextWebSocketHandler {
-    private List<WebSocketSession> sessions = new ArrayList<>();
+public class ChatWebSocketHandler extends TextWebSocketHandler {
+    private final List<WebSocketSession> webSocketSessions = new ArrayList<>();
 
     @Override
     //afterConnectionEstablished 연결 되었을 때를 의미
     public void afterConnectionEstablished(WebSocketSession session) throws Exception {
-        sessions.add(session);
+        webSocketSessions.add(session);
         log.info("접속 : {}",  session);
     }
 
@@ -26,15 +26,15 @@ public class WebSocketHandler extends TextWebSocketHandler {
     //
     protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
         log.info("메세지 전송 = {} : {}",session,message.getPayload());
-        for(WebSocketSession sess : sessions){
+        for(WebSocketSession webSocketSession : webSocketSessions){
             TextMessage msg = new TextMessage(message.getPayload());
-            sess.sendMessage(msg);
+            webSocketSession.sendMessage(msg);
         }
     }
 
     @Override
     public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
-        sessions.remove(session);
+        webSocketSessions.remove(session);
         log.info("퇴장 : {}",  session);
     }
 }
