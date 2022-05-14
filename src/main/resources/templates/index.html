@@ -27,6 +27,7 @@
 
 
     <style>
+
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -34,6 +35,7 @@
         -moz-user-select: none;
         user-select: none;
       }
+
 
       @media (min-width: 768px) {
         .bd-placeholder-img-lg {
@@ -47,83 +49,57 @@
     <link href="product.css" rel="stylesheet">
 </head>
 <body>
+    <!-- navbar -->
+    <header class="p-3 bg-* text-white" style="background-color: #845EC2;">
 
-<header class="site header">
-    <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand">GUHAM@.@</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">메인페이지</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">괌@.@ 알아보기</a>
-                    </li>
-                    <li class="nav-item1 dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            1/N
+
+
+        <!-- nav content --!>
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+                </a>
+
+
+                <!-- logo -->
+                <nav class="navbar bg-l-*">
+                    <div class="container">
+                        <a class="navbar-brand" href="#">
+                            <img src="/resources/img/logo1.png" alt="" width="100" height="24">
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">음식</a></li>
-                            <li><a class="dropdown-item" href="#">생활용품</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item2 dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            활동
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">스포츠</a></li>
-                            <li><a class="dropdown-item" href="#">공부</a></li>
-                            <li><a class="dropdown-item" href="#">음악</a></li>
-                            <li><a class="dropdown-item" href="#">온라인게임</a></li>
-                            <li><a class="dropdown-item" href="#">오프라인게임</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item3 dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            관람
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">뮤지컬</a></li>
-                            <li><a class="dropdown-item" href="#">연극</a></li>
-                            <li><a class="dropdown-item" href="#">콘서트</a></li>
-                            <li><a class="dropdown-item" href="#">스포츠</a></li>
-                            <li><a class="dropdown-item" href="#">영화</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled">기타</a>
-                    </li>
+                    </div>
+                </nav>
+
+                <!-- content -->
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            마이페이지
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">정보수정</a></li>
-                            <li><a class="dropdown-item" href="#">내글보기</a></li>
-                            <li><a class="dropdown-item" href="#">찜목록</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        1/N</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">음식</a>
+                            <a class="dropdown-item" href="#">생활용품</a>
+                        </div>
                     </li>
-
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-white">활동</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-white">관람</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-white">기타</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-white">마이페이지</a></li>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="검색어를 입력하세요" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="검색">
+                    <input type="search" class="form-control form-control-dark text-white bg-white" placeholder="Search..." aria-label="Search">
                 </form>
+
+                <div class="text-end">
+                    <button type="button" class="btn btn-outline-light me-2">로그인</button>
+                    <button type="button" class="btn btn-warning">회원가입</button>
+                </div>
             </div>
         </div>
-    </nav>
+    </header>
 
-
-</header>
-
+    <!-- Jumbo -->
 <main>
     <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
         <div class="col-md-5 p-lg-5 mx-auto my-5">
@@ -139,7 +115,7 @@
 
     <div class="container marketing">
 
-        <!-- Three columns of text below the carousel -->
+        <!-- tabel -->
         <div class="row">
             <div class="col-lg-4">
                 <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
