@@ -1,14 +1,49 @@
 package devDevilz.guham.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.apache.tomcat.jni.Socket;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
-@RestController
-public class ChatController {
+import javax.websocket.OnMessage;
+import javax.websocket.OnOpen;
+import javax.websocket.Session;
+import javax.websocket.server.ServerEndpoint;
 
-    @RequestMapping(value = "/string", method = RequestMethod.GET)
+@Controller
+@ServerEndpoint("/websocket")
+public class ChatController extends Socket {
+    private static final List<Session> session = new ArrayList<Session>();
+
+    @GetMapping(value = "/string")
     public String chat(){
 
-        return "chat";
+        return "chat.html";
     }
+
+    @OnOpen
+    public void open(Session newUser) {
+        System.out.println("connected");
+        session.add(newUser);
+        System.out.println(newUser.getId());
+    }
+
+    @OnMessage
+    public void getMsg(Session recieveSession, String msg) {
+        for (int i = 0; i < session.size(); i++) {
+            if (!recieveSession.getId().equals(session.get(i).getId())) {
+                try {
+                    session.get(i).getBasicRemote().sendText("상대 : " + msg);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                try {
+                    session.get(i).getBasicRemote().sendText("나 : " + msg);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
 }
