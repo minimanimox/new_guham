@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 
 @Slf4j
 @Component
-public class ChatWebSocketHandler extends TextWebSocketHandler {
+public class WebSocketChatHandler extends TextWebSocketHandler {
 
     private final static Logger LOG = Logger.getGlobal();
 
