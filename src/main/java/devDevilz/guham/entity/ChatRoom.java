@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.UUID;
 
 
@@ -14,6 +15,7 @@ import java.util.UUID;
 @NoArgsConstructor
 public class ChatRoom {
 
+    @Id
     private String roomId;
     private String roomName;
 
